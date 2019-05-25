@@ -1,31 +1,26 @@
 import UIKit
 
-class FirstSubViewController: UIViewController {
+class FirstViewController: UIViewController {
     
     let button = UIButton()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         // view
-        view.backgroundColor = .blue
+        view.backgroundColor = .red
         view.addSubview(button)
         
         // button
-        button.setTitle("Go to SecondSVD", for: .normal)
+        button.setTitle("Go to SecondVC", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-        
-        //
-        self.title = "FirstSubViewController"
-        
     }
-    
     @objc func tappedButton() {
-        let secondSVC = SecondSubViewController()
-        navigationController?.pushViewController(secondSVC, animated: true)
+        let SecondVC = SecondViewController()
+        present(SecondVC, animated: true)
     }
-    
 }

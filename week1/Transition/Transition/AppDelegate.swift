@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  화면전환
+//  Transition
 //
-//  Created by sogih on 23/05/2019.
+//  Created by sogih on 24/05/2019.
 //  Copyright © 2019 sogih. All rights reserved.
 //
 

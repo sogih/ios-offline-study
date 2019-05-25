@@ -5,6 +5,7 @@ class SecondSubViewController: UIViewController {
     let button = UIButton()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         // view
         view.backgroundColor = .black
@@ -19,11 +20,9 @@ class SecondSubViewController: UIViewController {
         button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         
         // navi
-        self.title = "SecondSubViewController"
-
+        title = "SecondSubViewController"
     }
-    
-    @objc func tappedButton(){
-        self.navigationController?.popToRootViewController(animated: true)
+    @objc func tappedButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
