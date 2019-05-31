@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TableView-Todo
+//  TableView
 //
-//  Created by sogih on 29/05/2019.
+//  Created by sogih on 31/05/2019.
 //  Copyright © 2019 sogih. All rights reserved.
 //
 
@@ -15,8 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColor.gray
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: FirstViewController())
+        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
