@@ -2,7 +2,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    static let cell = "TableViewCell"
+    static let cellId = "TableViewCell"
+    let todoLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -18,11 +19,11 @@ class TableViewCell: UITableViewCell {
 extension TableViewCell {
     func setupUI() {
         contentView.backgroundColor = .gray
-        let label = UILabel()
-        contentView.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
-        label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 24).isActive = true
-        label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        contentView.addSubview(todoLabel)
+        todoLabel.textColor = .white
+        todoLabel.translatesAutoresizingMaskIntoConstraints = false
+        todoLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
+        todoLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 24).isActive = true
+        todoLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
 }

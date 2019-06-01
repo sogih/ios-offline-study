@@ -14,6 +14,7 @@
 		BFFA8BC122A10B7D0045B622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFA8BBF22A10B7D0045B622 /* LaunchScreen.storyboard */; };
 		BFFA8BCC22A115F00045B622 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8BCB22A115F00045B622 /* TableViewCell.swift */; };
 		BFFA8BD022A119950045B622 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8BCF22A119950045B622 /* Todo.swift */; };
+		BFFA8BD222A29EAD0045B622 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8BD122A29EAD0045B622 /* SubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BFFA8BC222A10B7D0045B622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFFA8BCB22A115F00045B622 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BFFA8BCF22A119950045B622 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		BFFA8BD122A29EAD0045B622 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BFFA8BB822A10B7D0045B622 /* MainViewController.swift */,
+				BFFA8BD122A29EAD0045B622 /* SubViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				BFFA8BB922A10B7D0045B622 /* MainViewController.swift in Sources */,
 				BFFA8BCC22A115F00045B622 /* TableViewCell.swift in Sources */,
+				BFFA8BD222A29EAD0045B622 /* SubViewController.swift in Sources */,
 				BFFA8BB722A10B7D0045B622 /* AppDelegate.swift in Sources */,
 				BFFA8BD022A119950045B622 /* Todo.swift in Sources */,
 			);
