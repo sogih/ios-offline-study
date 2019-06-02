@@ -35,6 +35,8 @@ extension MainViewController {
         navigationItem.leftBarButtonItem = leftBarButtonToDelete
         let rightBarButtonToAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tappedRightBarButtonToAdd))
         navigationItem.rightBarButtonItem = rightBarButtonToAdd
+        navigationItem.title = "To Do"
+        navigationController?.navigationBar.tintColor = UIColor.black
         
     }
     func setupTableView() {
@@ -73,7 +75,7 @@ extension MainViewController {
 }
 
 
-//MARK:-
+//MARK:- TableViewDelegate, DataSource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.todoList.count
