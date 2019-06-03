@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C90F6B1CC88533BBECCD6B9 /* Pods_TableView_2nd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8ECCCE4C2FFF3412A737C2 /* Pods_TableView_2nd.framework */; };
 		BFFA8C2422A4F9B70045B622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8C2322A4F9B70045B622 /* AppDelegate.swift */; };
 		BFFA8C2622A4F9B70045B622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8C2522A4F9B70045B622 /* ViewController.swift */; };
 		BFFA8C2922A4F9B70045B622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFA8C2722A4F9B70045B622 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C81881836A893928FC2597C /* Pods-TableView-2nd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableView-2nd.release.xcconfig"; path = "Target Support Files/Pods-TableView-2nd/Pods-TableView-2nd.release.xcconfig"; sourceTree = "<group>"; };
+		3B8ECCCE4C2FFF3412A737C2 /* Pods_TableView_2nd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableView_2nd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA8C2022A4F9B70045B622 /* TableView-2nd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TableView-2nd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA8C2322A4F9B70045B622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFA8C2522A4F9B70045B622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		BFFA8C2F22A4F9B80045B622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFFA8C3522A4FA2F0045B622 /* CodingCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingCustomTableViewCell.swift; sourceTree = "<group>"; };
 		BFFA8C3722A501820045B622 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		DB4D6D1598DACD61A00B276D /* Pods-TableView-2nd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableView-2nd.debug.xcconfig"; path = "Target Support Files/Pods-TableView-2nd/Pods-TableView-2nd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C90F6B1CC88533BBECCD6B9 /* Pods_TableView_2nd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C422B46DDF41FE1E23ED0AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB4D6D1598DACD61A00B276D /* Pods-TableView-2nd.debug.xcconfig */,
+				0C81881836A893928FC2597C /* Pods-TableView-2nd.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BFFA8C1722A4F9B70045B622 = {
 			isa = PBXGroup;
 			children = (
 				BFFA8C2222A4F9B70045B622 /* TableView-2nd */,
 				BFFA8C2122A4F9B70045B622 /* Products */,
+				7C422B46DDF41FE1E23ED0AB /* Pods */,
+				D3AE3F02BC1128B4080C5EC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,14 @@
 			path = "TableView-2nd";
 			sourceTree = "<group>";
 		};
+		D3AE3F02BC1128B4080C5EC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B8ECCCE4C2FFF3412A737C2 /* Pods_TableView_2nd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFFA8C3222A4F9B80045B622 /* Build configuration list for PBXNativeTarget "TableView-2nd" */;
 			buildPhases = (
+				F37D12C3028D74FB13D67E4F /* [CP] Check Pods Manifest.lock */,
 				BFFA8C1C22A4F9B70045B622 /* Sources */,
 				BFFA8C1D22A4F9B70045B622 /* Frameworks */,
 				BFFA8C1E22A4F9B70045B622 /* Resources */,
+				BFEB31A9810A3DD1AECD4CFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFEB31A9810A3DD1AECD4CFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableView-2nd/Pods-TableView-2nd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableView-2nd/Pods-TableView-2nd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TableView-2nd/Pods-TableView-2nd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F37D12C3028D74FB13D67E4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TableView-2nd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFFA8C1C22A4F9B70045B622 /* Sources */ = {
@@ -288,6 +357,7 @@
 		};
 		BFFA8C3322A4F9B80045B622 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB4D6D1598DACD61A00B276D /* Pods-TableView-2nd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +375,7 @@
 		};
 		BFFA8C3422A4F9B80045B622 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C81881836A893928FC2597C /* Pods-TableView-2nd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
