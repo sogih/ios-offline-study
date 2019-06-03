@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
         tv.backgroundColor = .gray
         tv.delegate = self
         tv.dataSource = self
+//        tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellId)
         tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellId)
         return tv
     }()
@@ -40,8 +41,6 @@ extension MainViewController {
         
     }
     func setupTableView() {
-
-        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -60,12 +59,10 @@ extension MainViewController {
     @objc func tappedRightBarButtonToAdd() {
         let alert = UIAlertController(title: "ToDo 추가하기", message: "추가할 메시지를 입력하세요.", preferredStyle: .alert)
         alert.addTextField()
-        let textField = alert.textFields![0]
         let ok = UIAlertAction(title: "확인", style: .default) { (_) in
-            let todoText = textField.text!
+            let todoText = alert.textFields![0].text!
             let newTodo = Todo(todoText: todoText)
             self.todoList.append(newTodo)
-            
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive)
         alert.addAction(ok)
