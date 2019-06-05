@@ -7,6 +7,5 @@
 - Delegate pattern [Reference](https://www.notion.so/Delegate-Pattern-abec19f5483a4c718ecdec2e57878d3d)
 - Table View [Example](week2/TableView) [Reference](https://www.notion.so/Table-View-c7a2469182634c7fa1914657a29fcb49)
 ## Week 3
-- Tab Bar
-- CocoPods [Reference](https://www.notion.so/Tab-Bar-0dd70cc19bcc4003abe1104bad2828d2)
-  - Snapkit
+- Tab Bar 
+- TableView within TableViewCell 
