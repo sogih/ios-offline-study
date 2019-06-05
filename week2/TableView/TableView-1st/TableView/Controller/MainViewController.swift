@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
         tv.backgroundColor = .gray
         tv.delegate = self
         tv.dataSource = self
-//        tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellId)
         tv.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellId)
         return tv
     }()

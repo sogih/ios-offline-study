@@ -36,8 +36,9 @@ extension CodingCustomTableViewCell {
         img.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         img.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         img.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        img.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        img.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        img.widthAnchor.constraint(equalToConstant: 128).isActive = true
+        img.heightAnchor.constraint(equalToConstant: 128).isActive = true
+        
         label.leadingAnchor.constraint(equalTo: img.trailingAnchor, constant: 15).isActive = true
         label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16).isActive = true
         label.centerYAnchor.constraint(equalTo: img.centerYAnchor).isActive = true
