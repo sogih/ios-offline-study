@@ -1,0 +1,6 @@
+framework module Pods_userdefault_and_collectionview {
+  umbrella header "Pods-userdefault-and-collectionview-umbrella.h"
+
+  export *
+  module * { export * }
+}

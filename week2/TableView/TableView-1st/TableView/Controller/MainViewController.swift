@@ -1,11 +1,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
     var todoList = [Todo](){
         didSet{
             self.tableView.reloadData()
         }
     }
+    
     lazy var tableView : UITableView = {
         let tv = UITableView()
         tv.backgroundColor = .gray
