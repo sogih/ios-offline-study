@@ -9,3 +9,5 @@
 ## Week 3
 - Tab Bar 
 - TableView within TableViewCell 
+- UserDefault
+- CollectionView
