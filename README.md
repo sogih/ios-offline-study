@@ -8,7 +8,7 @@
 - Table View [Example](week2/TableView) [Reference](https://www.notion.so/Table-View-c7a2469182634c7fa1914657a29fcb49)
 ## Week 3
 - Tab Bar 
-- TableView within TableViewCell 
 - UserDefault
 - CollectionView
 ## Week 4
+- Firebase
