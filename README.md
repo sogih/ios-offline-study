@@ -9,6 +9,6 @@
 ## Week 3
 - Tab Bar 
 - UserDefault
-- CollectionView
+- CollectionView [Example](week3/userdefault-and-collectionview)
 ## Week 4
 - Firebase
