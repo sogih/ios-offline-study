@@ -1,37 +1,31 @@
 import UIKit
-import SnapKit
+
 
 class MainViewController: UIViewController {
     
-    let welcomeText : UILabel = {
-        let lbl = UILabel()
-        lbl.text = "\(UserDefaults.standard.string(forKey: "id")!)님 어서오세요! 😎"
-        lbl.backgroundColor = UIColor(red: 0.7, green: 0.9, blue: 0.7, alpha: 1.0)
-        lbl.layer.cornerRadius = 8
-        lbl.layer.masksToBounds = true
-        lbl.textAlignment = .center
-        lbl.textColor = .white
-        return lbl
-    }()
+    let welcomeText = UILabel().then {
+        $0.text = "\(UserDefaults.standard.string(forKey: "id")!)님 어서오세요! 😎"
+        $0.backgroundColor = UIColor(red: 0.7, green: 0.9, blue: 0.7, alpha: 1.0)
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+        $0.textAlignment = .center
+        $0.textColor = .white
+    }
     
-    let logoutButton : UIButton = {
-        let btn = UIButton()
-        btn.setTitle("로그아웃", for: .normal)
-        btn.backgroundColor = UIColor(red: 0.7, green: 0.7, blue: 0.9, alpha: 1.0)
-        btn.layer.cornerRadius = 8
-        btn.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
-        return btn
-    }()
+    let logoutButton = UIButton().then {
+        $0.setTitle("로그아웃", for: .normal)
+        $0.backgroundColor = UIColor(red: 0.7, green: 0.7, blue: 0.9, alpha: 1.0)
+        $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
+    }
     
-    let sectionTitle : UILabel = {
-        let lbl = UILabel()
-        lbl.text = " Now hot 5"
-        lbl.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-        lbl.layer.cornerRadius = 8
-        lbl.layer.masksToBounds = true
-        lbl.font = UIFont.boldSystemFont(ofSize: 36)
-        return lbl
-    }()
+    let sectionTitle = UILabel().then {
+        $0.text = " Now hot 5"
+        $0.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+        $0.font = UIFont.boldSystemFont(ofSize: 36)
+    }
     
     lazy var firstCollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -47,7 +41,11 @@ class MainViewController: UIViewController {
         return cv
     }()
     
-    var songList = [Song]()
+    var songList = [Song]() {
+        didSet{
+            self.firstCollectionView.reloadData()
+        }
+    }
 }
 
 
@@ -117,16 +115,15 @@ extension MainViewController {
     }
     
     func addSong() {
-        let first = Song(thumbnail: "fake_love.jpg", title: "fake love", artist: "BTS")
-        let second = Song(thumbnail: "노래방에서.jpg", title: "노래방에서", artist: "장범준")
-        let third = Song(thumbnail: "밤편지.jpg", title: "밤편지", artist: "아이유")
-        let fourth = Song(thumbnail: "벌써12시.jpg", title: "벌써 12시", artist: "청하")
-        let fifth = Song(thumbnail: "오랜날오랜밤.jpg", title: "오랜 날 오랜 밤", artist: "악동뮤지션")
-        songList.append(first)
-        songList.append(second)
-        songList.append(third)
-        songList.append(fourth)
-        songList.append(fifth)
+        
+        let thumbnail = ["fake_love.jpg", "노래방에서.jpg", "밤편지.jpg", "벌써12시.jpg", "오랜날오랜밤.jpg"]
+        let title = ["fake love", "노래방에서", "밤편지", "벌써 12시", "오랜 날 오랜 밤"]
+        let artist = ["BTS", "장범준", "아이유", "청하", "악동뮤지션"]
+        
+        for i in 0...thumbnail.count-1 {
+            let song = Song(thumbnail: thumbnail[i], title: title[i], artist: artist[i])
+            songList.append(song)
+        }
         
     }
 }
@@ -143,10 +140,11 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         return self.songList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.thumbnail.image = UIImage(named: songList[indexPath.row].thumbnail)
-        cell.title.text = songList[indexPath.row].title
-        cell.subtitle.text = songList[indexPath.row].artist
+        cell.song = self.songList[indexPath.item]
+        
         return cell
     }
 }

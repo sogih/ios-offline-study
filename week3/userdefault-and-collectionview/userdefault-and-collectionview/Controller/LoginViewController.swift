@@ -1,53 +1,49 @@
 import UIKit
 import SnapKit
+import Then
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    let headerLabel : UILabel = {
-        let lbl = UILabel()
-        lbl.text = "🎵 Flo 🎵"
-        lbl.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-        lbl.layer.cornerRadius = 8
-        lbl.layer.masksToBounds = true
-        lbl.textAlignment = .center
-        return lbl
-    }()
+    let headerLabel = UILabel().then {
+        $0.text = "🎵 Flo 🎵"
+        $0.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+        $0.textAlignment = .center
+    }
     
-    let idTextField : UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.placeholder = "로그인 또는 등록할 아이디를 입력하세요."
-        tf.autocapitalizationType = .none
-        return tf
-    }()
     
-    let pwTextField : UITextField = {
-        let tf = UITextField()
-        tf.isSecureTextEntry = true
-        tf.borderStyle = .roundedRect
-        tf.placeholder = "로그인 또는 등록할 아이디의 비밀번호를 입력하세요."
-        return tf
-    }()
+    let idTextField = UITextField().then {
+        $0.borderStyle = .roundedRect
+        $0.placeholder = "로그인 또는 등록할 아이디를 입력하세요."
+        $0.autocapitalizationType = .none
+    }
     
-    let signinButton : UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .orange
-        btn.setTitleColor(.white, for: .normal)
-        btn.setTitle("로그인", for: .normal)
-        btn.layer.cornerRadius = 8
-        btn.addTarget(self, action: #selector(tappedSigninButton), for: .touchUpInside)
-        return btn
-    }()
     
-    let signupButton : UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .blue
-        btn.setTitleColor(.white, for: .normal)
-        btn.setTitle("회원가입", for: .normal)
-        btn.layer.cornerRadius = 8
-        btn.addTarget(self, action: #selector(tappedSignupButton), for: .touchUpInside)
-        return btn
-    }()
+    let pwTextField = UITextField().then {
+        $0.isSecureTextEntry = true
+        $0.borderStyle = .roundedRect
+        $0.placeholder = "로그인 또는 등록할 아이디의 비밀번호를 입력하세요."
+    }
+    
+    
+    let signinButton = UIButton().then {
+        $0.backgroundColor = .orange
+        $0.setTitleColor(.white, for: .normal)
+        $0.setTitle("로그인", for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(tappedSigninButton), for: .touchUpInside)
+    }
+    
+    
+    let signupButton = UIButton().then {
+        $0.backgroundColor = .blue
+        $0.setTitleColor(.white, for: .normal)
+        $0.setTitle("회원가입", for: .normal)
+        $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(tappedSignupButton), for: .touchUpInside)
+    }
     
 }
 
@@ -118,28 +114,45 @@ extension LoginViewController {
     
     @objc func tappedSigninButton() {
         
-        if idTextField.text == UserDefaults.standard.string(forKey: "id") && pwTextField.text == UserDefaults.standard.string(forKey: "pw") {
-            let mainVC = MainViewController()
-            present(mainVC, animated: true)
-            
-        } else {
-            let alert = UIAlertController(title: "Failed!", message: "😭 아이디 또는 비밀번호를 확인해주세요.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default)
-            alert.addAction(ok)
-            present(alert, animated: true)
-        }
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
         
+        Auth.auth().signIn(withEmail: idTextField.text!, password: pwTextField.text!) { (authResult, error) in
+            if let err = error {
+                alert.title = "error"
+                alert.message = err.localizedDescription
+                self.present(alert, animated: true)
+            }
+            
+            if let result = authResult {
+                let mainVC = MainViewController()
+                self.present(mainVC, animated: true)
+            }
+        }
     }
     
     @objc func tappedSignupButton() {
-        // save id pw data
-        UserDefaults.standard.set(self.idTextField.text, forKey: "id")
-        UserDefaults.standard.set(self.pwTextField.text, forKey: "pw")
-        
-        // alert
-        let alert = UIAlertController(title: "Registered!", message: "😍 회원가입이 완료되었습니다~!", preferredStyle: .alert)
+
+        // 파이어베이스
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
-        present(alert, animated: true)
+        
+        Auth.auth().createUser(withEmail: self.idTextField.text!, password: self.pwTextField.text!) { (authResult, error) in
+            
+            if let err = error {
+                alert.title = "Error"
+                alert.message = err.localizedDescription
+            }
+            
+            if authResult != nil {
+                alert.title = "success"
+                alert.message = "로그인을 해주세요"
+            }
+            
+            self.present(alert, animated: true)
+            
+        }
     }
 }

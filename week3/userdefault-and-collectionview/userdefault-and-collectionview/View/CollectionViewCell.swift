@@ -2,24 +2,27 @@ import UIKit
 
 class CollectionViewCell : UICollectionViewCell {
     
-    let title : UILabel = {
-        let lbl = UILabel()
-        lbl.font = UIFont.boldSystemFont(ofSize: 24)
-        return lbl
-    }()
+    var song : Song? {
+        didSet{
+            let image = UIImage(named:self.song!.thumbnail)
+            self.thumbnail.image = image
+            self.title.text = self.song?.title
+            self.subtitle.text = self.song?.artist
+        }
+    }
     
-    let subtitle : UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .darkGray
-        return lbl
-    }()
+    let title = UILabel().then {
+        $0.font = UIFont.boldSystemFont(ofSize: 24)
+    }
     
-    let thumbnail : UIImageView = {
-        let iv = UIImageView()
-        iv.layer.cornerRadius = 8
-        iv.layer.masksToBounds = true
-        return iv
-    }()
+    let subtitle = UILabel().then {
+        $0.textColor = .darkGray
+    }
+    
+    let thumbnail = UIImageView().then {
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

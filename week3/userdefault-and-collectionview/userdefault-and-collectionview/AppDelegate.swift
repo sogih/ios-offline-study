@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -7,9 +9,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoginViewController()
-        window?.makeKeyAndVisible()
+        FirebaseApp.configure()
+            // firebaseApp 객체 초기화
+        willAutoLogin { (vc) in
+            
+            if let viewController = vc as? LoginViewController {
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = LoginViewController()
+                self.window?.makeKeyAndVisible()
+            }
+            
+            if let viewController = vc as? MainViewController {
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = MainViewController()
+                self.window?.makeKeyAndVisible()
+            }
+            
+        }
         return true
     }
 
@@ -38,3 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    func willAutoLogin(completion: @escaping (UIViewController) -> Void) {
+        
+        guard let id = UserDefaults.standard.string(forKey: "id") else { return }
+        guard let pw = UserDefaults.standard.string(forKey: "pw") else { return }
+        
+        Auth.auth().signIn(withEmail: id, password: pw) { (authResult, error) in
+            
+            if let err = error {
+                
+                let loginVC = LoginViewController()
+                completion(loginVC)
+            }
+            
+            if let result = authResult {
+                let mainVC = MainViewController()
+                completion(mainVC)
+            }
+        }
+        
+    }
+    
+
+}

@@ -12,6 +12,7 @@
 		BF0A264922AB7C0700D15DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0A264722AB7C0700D15DC3 /* Main.storyboard */; };
 		BF0A264B22AB7C0700D15DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF0A264A22AB7C0700D15DC3 /* Assets.xcassets */; };
 		BF0A264E22AB7C0700D15DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0A264C22AB7C0700D15DC3 /* LaunchScreen.storyboard */; };
+		BF0E2DFD22AE554C0057DF70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF0E2DFC22AE554C0057DF70 /* GoogleService-Info.plist */; };
 		BF1F241122AB8A9D00B71899 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F241022AB8A9D00B71899 /* MainViewController.swift */; };
 		BF1F242222ABEB9A00B71899 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F242122ABEB9A00B71899 /* CollectionViewCell.swift */; };
 		BF1F242422ABED9900B71899 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F242322ABED9900B71899 /* Song.swift */; };
@@ -29,6 +30,7 @@
 		BF0A264A22AB7C0700D15DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF0A264D22AB7C0700D15DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF0A264F22AB7C0700D15DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF0E2DFC22AE554C0057DF70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF1F241022AB8A9D00B71899 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF1F242122ABEB9A00B71899 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BF1F242322ABED9900B71899 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				BF0A264A22AB7C0700D15DC3 /* Assets.xcassets */,
 				BF0A264C22AB7C0700D15DC3 /* LaunchScreen.storyboard */,
 				BF0A264F22AB7C0700D15DC3 /* Info.plist */,
+				BF0E2DFC22AE554C0057DF70 /* GoogleService-Info.plist */,
 			);
 			path = "userdefault-and-collectionview";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0A264E22AB7C0700D15DC3 /* LaunchScreen.storyboard in Resources */,
+				BF0E2DFD22AE554C0057DF70 /* GoogleService-Info.plist in Resources */,
 				BF0A264B22AB7C0700D15DC3 /* Assets.xcassets in Resources */,
 				BF0A264922AB7C0700D15DC3 /* Main.storyboard in Resources */,
 			);
