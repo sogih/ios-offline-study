@@ -149,6 +149,13 @@ extension LoginViewController {
             
             if authResult != nil {
                 UserDefaults.standard.set(authResult?.user.metadata.lastSignInDate, forKey: "lastSignInDate")
+                
+                //save data in singleton class
+                AuthResult.user.displayName = authResult?.user.displayName
+                AuthResult.user.email = authResult?.user.email
+                AuthResult.user.creationDate = authResult?.user.metadata.creationDate
+                AuthResult.user.lastSignInDate = authResult?.user.metadata.lastSignInDate
+                
                 let mainVC = MainViewController()
                 self.indicator.stopAnimating()
                 self.present(mainVC, animated: true, completion: nil)

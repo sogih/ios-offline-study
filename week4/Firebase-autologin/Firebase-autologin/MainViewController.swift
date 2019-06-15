@@ -29,6 +29,13 @@ extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        //call sigleton class
+        let userDetail = AuthResult.user
+        print(userDetail.creationDate)
+        print(userDetail.displayName)
+        print(userDetail.email)
+        print(userDetail.lastSignInDate)
     }
 }
 

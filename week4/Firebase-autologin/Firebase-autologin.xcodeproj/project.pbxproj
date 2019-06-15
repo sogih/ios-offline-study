@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1D741E22B4AC5000978E54 /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D741D22B4AC5000978E54 /* SingletonClass.swift */; };
 		BF8B4B6222AF43A200A193DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4B6122AF43A200A193DE /* AppDelegate.swift */; };
 		BF8B4B6422AF43A200A193DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4B6322AF43A200A193DE /* LoginViewController.swift */; };
 		BF8B4B6722AF43A200A193DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8B4B6522AF43A200A193DE /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1E66E88A0E4DA8DA7291BDBE /* Pods_Firebase_autologin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_autologin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2632F7DB824D76421C70EC8F /* Pods-Firebase-autologin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-autologin.debug.xcconfig"; path = "Target Support Files/Pods-Firebase-autologin/Pods-Firebase-autologin.debug.xcconfig"; sourceTree = "<group>"; };
+		BF1D741D22B4AC5000978E54 /* SingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingletonClass.swift; path = "/Users/sogih/Library/Mobile Documents/com~apple~CloudDocs/Workspace/ios-offline-study/week4/Firebase-autologin/Firebase-autologin/SingletonClass.swift"; sourceTree = "<absolute>"; };
 		BF8B4B5E22AF43A200A193DE /* Firebase-autologin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase-autologin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8B4B6122AF43A200A193DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF8B4B6322AF43A200A193DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				BF8B4B6122AF43A200A193DE /* AppDelegate.swift */,
 				BF8B4B6322AF43A200A193DE /* LoginViewController.swift */,
+				BF1D741D22B4AC5000978E54 /* SingletonClass.swift */,
 				BF8B4B7722AF6E0200A193DE /* MainViewController.swift */,
 				BF8B4B6522AF43A200A193DE /* Main.storyboard */,
 				BF8B4B6822AF43A200A193DE /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1D741E22B4AC5000978E54 /* SingletonClass.swift in Sources */,
 				BF8B4B7822AF6E0200A193DE /* MainViewController.swift in Sources */,
 				BF8B4B6422AF43A200A193DE /* LoginViewController.swift in Sources */,
 				BF8B4B6222AF43A200A193DE /* AppDelegate.swift in Sources */,
