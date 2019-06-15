@@ -138,9 +138,10 @@ extension LoginViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
-        
+        print("dasfdsa")
         Auth.auth().createUser(withEmail: self.idTextField.text!, password: self.pwTextField.text!) { (authResult, error) in
-            
+//            print(authResult)
+//            print(error?.localizedDescription)
             if let err = error {
                 alert.title = "Error"
                 alert.message = err.localizedDescription

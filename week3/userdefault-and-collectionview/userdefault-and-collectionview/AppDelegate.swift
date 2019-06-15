@@ -10,21 +10,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-            // firebaseApp 객체 초기화
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = LoginViewController()
+//        self.window?.makeKeyAndVisible()
+        
         willAutoLogin { (vc) in
-            
+
             if let viewController = vc as? LoginViewController {
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 self.window?.rootViewController = LoginViewController()
                 self.window?.makeKeyAndVisible()
             }
-            
+
             if let viewController = vc as? MainViewController {
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 self.window?.rootViewController = MainViewController()
                 self.window?.makeKeyAndVisible()
             }
-            
+
         }
         return true
     }
@@ -55,27 +58,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    
+
     func willAutoLogin(completion: @escaping (UIViewController) -> Void) {
-        
+
         guard let id = UserDefaults.standard.string(forKey: "id") else { return }
         guard let pw = UserDefaults.standard.string(forKey: "pw") else { return }
-        
+        // guard-binding
+            // guard let - if id&pw != nil then id&pw에 데이타할당하고 이후 함수 진행
+            // else { return } - if id&pw == nil then 이후 함수 진행 하지 않음 (조기 종료)
+
         Auth.auth().signIn(withEmail: id, password: pw) { (authResult, error) in
-            
+
             if let err = error {
-                
+
                 let loginVC = LoginViewController()
                 completion(loginVC)
             }
-            
+
             if let result = authResult {
                 let mainVC = MainViewController()
                 completion(mainVC)
             }
         }
-        
-    }
-    
 
+    }
 }
