@@ -9,6 +9,7 @@
 ## Week 3
 - Tab Bar 
 - UserDefault
-- CollectionView
+- CollectionView [Example](week3/userdefault-and-collectionview)
 ## Week 4
-- Firebase
+- Firebase [Reference](https://www.notion.so/Firebase-7a08bd11e92c4cdf8ed68db7ca2c68df)
+- Singletone
