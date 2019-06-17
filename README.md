@@ -15,4 +15,4 @@
 - Singleton pattern [Reference](https://www.notion.so/Singleton-pattern-f6ffa0e36a1f4643b395c2950392b551)
 - Indicator
 ## Week 5
-- CoreData
+- CoreData [Reference](https://www.notion.so/Core-Data-a9e57fbc4fc54818bcb6447cb9ce9f94)
