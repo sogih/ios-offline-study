@@ -21,6 +21,7 @@ class SecondSubViewController: UIViewController {
         
         // navi
         title = "SecondSubViewController"
+        
     }
     @objc func tappedButton() {
         navigationController?.popToRootViewController(animated: true)

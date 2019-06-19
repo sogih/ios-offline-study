@@ -4,7 +4,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     let welcomeText = UILabel().then {
-        $0.text = "\(UserDefaults.standard.string(forKey: "id")!)님 어서오세요! 😎"
+        $0.text = "어서오세요! 😎"
         $0.backgroundColor = UIColor(red: 0.7, green: 0.9, blue: 0.7, alpha: 1.0)
         $0.layer.cornerRadius = 8
         $0.layer.masksToBounds = true
