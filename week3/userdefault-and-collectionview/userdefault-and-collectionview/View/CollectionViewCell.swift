@@ -3,7 +3,7 @@ import UIKit
 class CollectionViewCell : UICollectionViewCell {
     
     var song : Song? {
-        didSet{
+        didSet {
             let image = UIImage(named:self.song!.thumbnail)
             self.thumbnail.image = image
             self.title.text = self.song?.title
@@ -60,7 +60,6 @@ extension CollectionViewCell {
             $0.trailing.equalTo(contentView)
             $0.top.equalTo(title.snp_bottomMargin).offset(12)
         }
-        
 
     }
 }
