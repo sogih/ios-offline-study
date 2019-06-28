@@ -16,3 +16,4 @@
 - Indicator
 ## Week 5
 - CoreData [Reference](https://www.notion.so/Core-Data-a9e57fbc4fc54818bcb6447cb9ce9f94)
+- Operation / Dispatch Queue [Reference](https://www.notion.so/Dispatch-Operation-Queues-e2562afa6e324bddbf375e2ee0fc20be)
